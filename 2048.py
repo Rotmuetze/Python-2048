@@ -118,7 +118,7 @@ def handle_color():
         elif(label.cget("text") == 8):
            label.configure(fg_color="slate blue")
         elif(label.cget("text") == 16):
-           label.configure(fg_color="dark slave blue")
+           label.configure(fg_color="dark slate blue")
         elif(label.cget("text") == 32):
            label.configure(fg_color="dark slate gray")
         elif(label.cget("text") == 64):
