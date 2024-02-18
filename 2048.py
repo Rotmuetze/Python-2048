@@ -12,8 +12,7 @@ def handle_key(event):
     while i < 3:
         i = i + 1
         merge(event.keysym)
-    
-    time.sleep(0.2) #fuers feeling
+ #   time.sleep(0.2) #fuers feeling
     newnumber()
     handle_color()
 
@@ -122,11 +121,11 @@ def handle_color():
         elif(label.cget("text") == 32):
            label.configure(fg_color="dark slate gray")
         elif(label.cget("text") == 64):
-            label.configure(fg_color="green")
+            label.configure(fg_color="tomato")
         elif(label.cget("text") == 128):
-            label.configure(fg_color="forest green")
+            label.configure(fg_color="orange")
         elif(label.cget("text") == 256):
-            label.configure(fg_color="charttreuse4")
+            label.configure(fg_color="DarkGoldenrod4")
         elif(label.cget("text") == 512):
             label.configure(fg_color="maroon1")
         elif(label.cget("text") == 1024):
@@ -136,34 +135,34 @@ def handle_color():
         else:
             label.configure(fg_color="white")
 
+#startet spiel
+def handle_start():
+    root.title("2048")
+    root.minsize(500,440)
+    root.maxsize(500,440)
+    root.config(background="white")
+    root.bind("<KeyPress>", handle_key)
+
+    text = customtkinter.CTkLabel(root, text="2048", font=("Arial",25),width=500,height=40)
+    text.grid(row=0, column=0, columnspan=4, sticky="nsew")
+
+    #inizialisierung spielfeld
+    for i in range(4):
+        for j in range(4):
+            label = customtkinter.CTkLabel(master=root, text=0, fg_color="white",text_color="black",bg_color="white", font=("Arial",25),width=120,height=90, corner_radius=25)
+            label.grid(row=i+1, column=j, padx=2, pady=2)
+            labels.append(label)
+
+    #spielanfang
+    newnumber()
+    newnumber()
+    newnumber()
+    newnumber()
+    newnumber()
+    handle_color()
+
+    root.mainloop()
 
 
-root.title("2048")
-root.minsize(500,440)
-root.maxsize(500,440)
-root.config(background="white")
-root.bind("<KeyPress>", handle_key)
-
-text = customtkinter.CTkLabel(root, text="2048", font=("Arial",25),width=500,height=40)
-text.grid(row=0, column=0, columnspan=4, sticky="nsew")
-
-#inizialisierung spielfeld
-for i in range(4):
-    for j in range(4):
-        label = customtkinter.CTkLabel(master=root, text=0, fg_color="white",text_color="black",bg_color="white", font=("Arial",25),width=120,height=90, corner_radius=25)
-        label.grid(row=i+1, column=j, padx=2, pady=2)
-        labels.append(label)
-
-#spielanfang
-newnumber()
-newnumber()
-newnumber()
-newnumber()
-newnumber()
-handle_color()
-
-
-
-root.mainloop()
-
+handle_start()
 #written by Benjamin Wende
