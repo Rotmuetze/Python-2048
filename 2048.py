@@ -9,7 +9,6 @@ keylog = False #verhindert merge bei mehrfacheingabe
 
 #trigger bei tastendruck
 def handle_key(event):
-    print(keylog)  
     if  globals()["keylog"] == False:
         globals()["keylog"] = True
         i = 0
