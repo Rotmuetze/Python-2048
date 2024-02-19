@@ -16,10 +16,10 @@ def handle_key(event):
         while i < 3:
             i = i + 1
             merge(event.keysym)
-        globals()["keylog"] = False
         #time.sleep(0.2) #fuers feeling
         newnumber()
         handle_color()
+        globals()["keylog"] = False
 
 #fügt neue Zahl hinzu
 def newnumber():
@@ -124,7 +124,7 @@ def handle_color():
         elif(label.cget("text") == 16):
            label.configure(fg_color="dark slate blue")
         elif(label.cget("text") == 32):
-           label.configure(fg_color="dark slate gray")
+           label.configure(fg_color="DeepPink2")
         elif(label.cget("text") == 64):
             label.configure(fg_color="tomato")
         elif(label.cget("text") == 128):
