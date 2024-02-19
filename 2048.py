@@ -3,7 +3,7 @@ import time
 import customtkinter
 
 root = customtkinter.CTk()
-#root.iconbitmap("icon.ico")
+root.iconbitmap("Python-2048/icon.ico")
 labels = [] #spielfeld (als Label)
 
 #trigger bei tastendruck
@@ -12,7 +12,7 @@ def handle_key(event):
     while i < 3:
         i = i + 1
         merge(event.keysym)
- #   time.sleep(0.2) #fuers feeling
+#    time.sleep(0.2) #fuers feeling
     newnumber()
     handle_color()
 
