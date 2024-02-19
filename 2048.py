@@ -3,7 +3,7 @@ import time
 import customtkinter
 
 root = customtkinter.CTk()
-root.iconbitmap("Assets/icon.ico")
+#root.iconbitmap("icon.ico")
 labels = [] #spielfeld (als Label)
 
 #trigger bei tastendruck
