@@ -5,16 +5,21 @@ import customtkinter
 root = customtkinter.CTk()
 root.iconbitmap("Python-2048/icon.ico")
 labels = [] #spielfeld (als Label)
+keylog = False #verhindert merge bei mehrfacheingabe
 
 #trigger bei tastendruck
 def handle_key(event):
-    i = 0
-    while i < 3:
-        i = i + 1
-        merge(event.keysym)
-#    time.sleep(0.2) #fuers feeling
-    newnumber()
-    handle_color()
+    print(keylog)  
+    if  globals()["keylog"] == False:
+        globals()["keylog"] = True
+        i = 0
+        while i < 3:
+            i = i + 1
+            merge(event.keysym)
+        globals()["keylog"] = False
+        #time.sleep(0.2) #fuers feeling
+        newnumber()
+        handle_color()
 
 #fügt neue Zahl hinzu
 def newnumber():
