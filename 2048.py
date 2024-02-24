@@ -3,7 +3,7 @@ import time
 import customtkinter
 
 root = customtkinter.CTk()
-ico_path = "icon.ico"
+ico_path = 'Python-2048/icon.ico'
 root.iconbitmap(ico_path) # mit vorsicht zu genießen
 labels = [] #spielfeld (als Label)
 keylog = False #verhindert merge bei mehrfacheingabe
